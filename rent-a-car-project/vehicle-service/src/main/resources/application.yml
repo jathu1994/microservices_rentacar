@@ -1,0 +1,9 @@
+debug: true
+
+spring:
+  application:
+    name: vehicle
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
