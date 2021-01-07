@@ -1,0 +1,8 @@
+debug: true
+server:
+  port: 8191
+spring:  cloud:    config:      server:        git:          uri: https://github.com/jathu1994/krish_tutorial_config_store
+          search-paths:          - 'service-config/*service'
+          username: jathu10061994@gmail.com
+          password: ja4044868
+          
