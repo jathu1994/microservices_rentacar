@@ -1,6 +1,8 @@
 package com.jatha.rentcloud.authorizationserver.model;
 
 
+import java.io.Serializable;
+
 //import lombok.Data;
 
 import javax.persistence.*;
@@ -8,7 +10,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "permission")
 //@Data
-public class Permission {
+public class Permission implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

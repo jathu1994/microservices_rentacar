@@ -2,12 +2,14 @@ package com.jatha.rentcloud.authorizationserver.model;
 
 //import lombok.Data;
 import javax.persistence.*;
+
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "user")
 //@Data
-public class User  {
+public class User implements Serializable  {
     public User() {
     }
 

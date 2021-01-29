@@ -3,12 +3,14 @@ package com.jatha.rentcloud.authorizationserver.model;
 //import lombok.Data;
 
 import javax.persistence.*;
+
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "role")
 //@Data
-public class Role {
+public class Role implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
