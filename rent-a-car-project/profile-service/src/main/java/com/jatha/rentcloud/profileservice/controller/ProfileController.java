@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,7 @@ public class ProfileController {
 	
 	
 	@RequestMapping(value = "/profile",method = RequestMethod.POST)
+	@PreAuthorize("hasAuthority('create_profile')")
 	public Customer save(@RequestBody Customer customer) {
 		
 		return customerServiceImpl.save(customer);
@@ -30,6 +32,7 @@ public class ProfileController {
 	}
 	
 	@RequestMapping(value = "/profile",method = RequestMethod.GET)
+	@PreAuthorize("hasAuthority('read_profile')")
 	public List<Customer> findAll() {
 		
 		return customerServiceImpl.findAll();

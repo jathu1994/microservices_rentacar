@@ -16,3 +16,10 @@ spring:
 server:
   port: 9191
 
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:8192/oauth/check_token
+    client:
+      client-id: mobile
+      client-secret: pin 
