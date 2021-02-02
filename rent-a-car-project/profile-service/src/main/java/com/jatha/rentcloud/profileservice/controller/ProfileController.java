@@ -23,7 +23,7 @@ public class ProfileController {
 	CustomerServiceImpl customerServiceImpl;
 	
 	
-	@RequestMapping(value = "/profile",method = RequestMethod.POST)
+	@RequestMapping(value = "/profiles",method = RequestMethod.POST)
 	@PreAuthorize("hasAuthority('create_profile')")
 	public Customer save(@RequestBody Customer customer) {
 		
@@ -31,15 +31,15 @@ public class ProfileController {
 		
 	}
 	
-	@RequestMapping(value = "/profile",method = RequestMethod.GET)
-	@PreAuthorize("hasAuthority('read_profile')")
+	@RequestMapping(value = "/profiles",method = RequestMethod.GET)
+	@PreAuthorize("hasRole('ROLE_operator')")
 	public List<Customer> findAll() {
 		
 		return customerServiceImpl.findAll();
 		
 	}
 	
-	@RequestMapping(value = "/profile/{id}",method = RequestMethod.GET)
+	@RequestMapping(value = "/profiles/{id}",method = RequestMethod.GET)
 	public Optional<Customer> findById(@PathVariable(value="id") int id) {
 		
 		return customerServiceImpl.findById(id);
